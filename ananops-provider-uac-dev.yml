@@ -5,7 +5,7 @@ spring:
     joda-date-time-format: yyyy-MM-dd HH:mm:ss
     date-format: yyyy-MM-dd HH:mm:ss
   datasource:
-    url: jdbc:mysql://paascloud-db-mysql:3306/paascloud_uac?characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://ananops-db-mysql:3306/paascloud_uac?characterEncoding=utf8&useSSL=false
 
 mybatis:
   type-aliases-package: com.ananops.provider.model.domain
@@ -35,11 +35,12 @@ security:
     client:
       clientId: ananops-client-uac
       clientSecret: ananopsClientSecret
-      access-token-uri: http://paascloud-gateway:7979/uac/oauth/token
-      user-authorization-uri: http://paascloud-gateway:7979/uac/oauth/authorize
+      access-token-uri: http://ananops-gateway:7979/uac/oauth/token
+      user-authorization-uri: http://ananops-gateway:7979/uac/oauth/authorize
     resource:
       id: ananops-resource-uac
       filter-order: 3
+
 ananops:
   enableSqlLogInterceptor: false
   aliyun:
@@ -51,9 +52,9 @@ ananops:
       consumerGroup: CID_UAC
       producerGroup: PID_UAC
   auth:
-    rest-pwd-url: http://dev-login.paascloud.net/resetPwd?resetPwdKey=
-    active-user-url: http://dev-api.paascloud.net:7979/uac/auth/activeUser/
-    refresh-token-url: http://dev-api.paascloud.net:7979/uac/oauth/token
+    rest-pwd-url: http://dev-login.ananops.net/resetPwd?resetPwdKey=
+    active-user-url: http://dev-api.ananops.net:7979/uac/auth/activeUser/
+    refresh-token-url: http://dev-api.ananops.net:7979/uac/oauth/token
   token:
     interceptor:
       enable: true

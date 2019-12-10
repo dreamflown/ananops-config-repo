@@ -7,7 +7,7 @@ spring:
   cache:
     cache-names: mdc-cache
   datasource:
-    url: jdbc:mysql://paascloud-db-mysql:3306/paascloud_mdc?characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://ananops-db-mysql:3306/paascloud_mdc?characterEncoding=utf8&useSSL=false
 
 liquibase:
   change-log: classpath:liquibase/index.xml
@@ -37,13 +37,13 @@ security:
     client:
       clientId: ananops-client-mdc
       clientSecret: ananopsClientSecret
-      access-token-uri: http://paascloud-gateway:7979/uac/oauth/token
-      user-authorization-uri: http://paascloud-gateway:7979/uac/oauth/authorize
+      access-token-uri: http://ananops-gateway:7979/uac/oauth/token
+      user-authorization-uri: http://ananops-gateway:7979/uac/oauth/authorize
     resource:
-      user-info-uri: http://paascloud-gateway:7979/uac/user
+      user-info-uri: http://ananops-gateway:7979/uac/user
       prefer-token-info: false
       jwt:
-        key-uri: http://paascloud-provider-uac:8000/oauth/token_key
+        key-uri: http://ananops-provider-uac:8000/oauth/token_key
 
 ananops:
   enableSqlLogInterceptor: false
@@ -55,13 +55,13 @@ ananops:
     interceptor:
       enable: true
   zk:
-    zkAddressList: paascloud-provider-zk:2181
+    zkAddressList: ananops-provider-zk:2181
   aliyun:
     rocketMq:
       enable: false
       reliableMessageConsumer: false
       reliableMessageProducer: true
-      namesrvAddr: paascloud-mq-rocket:9876
+      namesrvAddr: ananops-mq-rocket:9876
       instanceName: ananops-provider-mdc
       consumerGroup: CID_MDC
       producerGroup: PID_MDC
